@@ -85,7 +85,7 @@ x = img_to_array(img)           # (3, 150, 150) 크기의 NumPy 배열
 x = x.reshape((1,) + x.shape)   # (1, 3, 150, 150) 크기의 NumPy 배열
 
 # 아래 .flow() 함수는 임의 변환된 이미지를 배치 단위로 생성
-# 지정된 `preview/` 폴더에 저장
+# 지정된 'preview/' 폴더에 저장
 i = 0
 for batch in datagen.flow(x, batch_size=1,
                           save_to_dir='preview', save_prefix='cat', save_format='jpeg'):
@@ -127,3 +127,66 @@ for batch in datagen.flow(x, batch_size=1,
     - ReLU 활성화 함수를 사용
     - max-pooling을 적용
 """
+
+model = Sequential()
+model.add(Conv2D(32, (3, 3), input_shape=(3, 150, 150)))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+
+model.add(Conv2D(32, (3, 3)))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+
+model.add(Conv2D(64, (3, 3)))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+
+# 두 개의 fully-connected 레이어를 배치할 것
+# 마지막에는 sigmoid 활성화 레이어를 배치 -> 분류하고자 하는 클래스가 3가지 이상이면 softmax 활성화 레이어를 사용
+# 손실 함수는 binary_crossentropy를 사용 -> 클래스가 3가지 이상이면 categorical_crossentropy를 사용
+
+model.add(Flatten())  # 이전 CNN 레이어에서 나온 3차원 배열은 1차원으로 뽑아줍니다
+model.add(Dense(64))
+model.add(Activation('relu'))
+model.add(Dropout(0.5))
+model.add(Dense(2))
+model.add(Activation('sigmoid'))
+
+model.compile(loss='binary_crossentropy',
+              optimizer='rmsprop',
+              metrics=['accuracy'])
+
+# flow_from_directory() 함수
+# 이미지가 저장된 폴더를 기준으로 라벨 정보와 함께 이미지를 불러올 수 있습니다.
+
+batch_size = 16
+
+# 학습 이미지에 적용한 augmentation 인자를 지정해줍니다.
+train_datagen = ImageDataGenerator(
+        rescale=1./255,
+        shear_range=0.2,
+        zoom_range=0.2,
+        horizontal_flip=True)
+
+# 검증 및 테스트 이미지는 augmentation을 적용하지 않습니다. 모델 성능을 평가할 때에는 이미지 원본을 사용합니다.
+validation_datagen = ImageDataGenerator(rescale=1./255)
+test_datagen = ImageDataGenerator(rescale=1./255)
+
+# 이미지를 배치 단위로 불러와 줄 generator입니다.
+train_generator = train_datagen.flow_from_directory(
+        'data/train',  # this is the target directory
+        target_size=(150, 150),  # 모든 이미지의 크기가 150x150로 조정됩니다.
+        batch_size=batch_size,
+        class_mode='binary')  # binary_crossentropy 손실 함수를 사용하므로 binary 형태로 라벨을 불러와야 합니다.
+
+validation_generator = validation_datagen.flow_from_directory(
+        'data/validation',
+        target_size=(150, 150),
+        batch_size=batch_size,
+        class_mode='binary')
+
+test_generator = test_datagen.flow_from_directory(
+        'data/validation',
+        target_size=(150, 150),
+        batch_size=batch_size,
+        class_mode='binary')
