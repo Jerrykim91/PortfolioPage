@@ -190,3 +190,14 @@ test_generator = test_datagen.flow_from_directory(
         target_size=(150, 150),
         batch_size=batch_size,
         class_mode='binary')
+
+# 본격적인 학습 
+model.fit_generator(
+        train_generator,
+        steps_per_epoch=1000 // batch_size,
+        validation_data=validation_generator,
+        epochs=50)
+model.save_weights('first_try.h5')  # 많은 시간을 들여 학습한 모델인 만큼, 학습 후에는 꼭 모델을 저장해줍시다.
+
+
+# 50% 진행 
