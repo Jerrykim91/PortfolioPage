@@ -1,13 +1,12 @@
-Future Imperfect by HTML5 UP
+Phantom by HTML5 UP
 html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
 
-It's been a long time coming, but I've finally gotten around to creating a brand new
-blog-style template (and the first since Striped, which came out waaaaay back in 2013).
-Anyway, Future Imperfect features a clean, expansive layout, a toggleable search box,
-and -- because pretty much all modern browsers can use it now -- a whole lot of flexbox
-action. Enjoy it :)
+This is Phantom, a simple design built around a grid of large, colorful, semi-interactive
+image tiles (of which you can have as many or as few as you like). Makes use of some
+SVG and animation techniques I've been experimenting with on that other project of mine
+you may have heard about (https://carrd.co), and includes a handy generic page for whatever.
 
 Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
 you can use for pretty much whatever.
