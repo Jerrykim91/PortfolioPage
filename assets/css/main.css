@@ -1,5 +1,7 @@
 @import url(fontawesome-all.min.css);
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR&display=swap'); */
 
 /*
 	Phantom by HTML5 UP
@@ -118,9 +120,10 @@ input, select, textarea {
 	body, input, select, textarea {
 		color: #585858;
 		/* font-family: "Source Sans Pro", Helvetica,'Nanum Gothic', sans-serif,; */
-		/* font-family: 'Nanum Gothic', sans-serif,; */
+		/* font-family: 'Nanum Gothic', 'Noto Sans KR', sans-serif; */
+		/* font-family: 'Nanum Gothic', sans-serif; */
 		font-family: 'Nanum Pen Script', cursive;
-		font-size: 16pt;
+		font-size: 18pt;
 		font-weight: 300;
 		line-height: 1.75;
 	}
@@ -163,14 +166,15 @@ input, select, textarea {
 	em, i {
 		font-style: italic;
 	}
-
+/* 폰트 */
 	p {
 		margin: 0 0 2em 0;
-		/* font-size: 20pt; */
+		/* font-size: 18pt; */
 	}
 
 	h1 {
-		font-size: 2.75em;
+		/* font-size: 2.75em; */
+		font-size: 3.25em;
 		font-weight: 700;
 		line-height: 1.3;
 		margin: 0 0 1em 0;
@@ -184,7 +188,8 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			h1 {
-				font-size: 2em;
+				/* font-size: 2em; */
+				font-size: 2.5em;
 				margin: 0 0 1em 0;
 			}
 
@@ -193,7 +198,8 @@ input, select, textarea {
 		@media screen and (max-width: 360px) {
 
 			h1 {
-				font-size: 1.75em;
+				/* font-size: 1.75em; */
+				font-size: 2.25em;
 			}
 
 		}
@@ -212,7 +218,7 @@ input, select, textarea {
 
 	h2 {
 		/* font-size: 1.1em; */
-		font-size: 1.7em;
+		font-size: 1.6em;
 	}
 
 	h3 {
@@ -234,6 +240,7 @@ input, select, textarea {
 		/* font-size: 0.5em; */
 		font-size: 0.8em;
 	}
+
 
 	@media screen and (max-width: 980px) {
 
