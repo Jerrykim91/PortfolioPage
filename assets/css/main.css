@@ -1,5 +1,5 @@
 @import url(fontawesome-all.min.css);
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900");
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 
 /*
 	Phantom by HTML5 UP
@@ -118,8 +118,8 @@ input, select, textarea {
 	body, input, select, textarea {
 		color: #585858;
 		/* font-family: "Source Sans Pro", Helvetica,'Nanum Gothic', sans-serif,; */
-		font-family: 'Nanum Gothic', sans-serif,;
-
+		/* font-family: 'Nanum Gothic', sans-serif,; */
+		font-family: 'Nanum Pen Script', cursive;
 		font-size: 16pt;
 		font-weight: 300;
 		line-height: 1.75;
@@ -166,6 +166,7 @@ input, select, textarea {
 
 	p {
 		margin: 0 0 2em 0;
+		/* font-size: 20pt; */
 	}
 
 	h1 {
@@ -210,22 +211,27 @@ input, select, textarea {
 		}
 
 	h2 {
-		font-size: 1.1em;
+		/* font-size: 1.1em; */
+		font-size: 1.7em;
 	}
 
 	h3 {
-		font-size: 1em;
+		/* font-size: 1em; */
+		font-size: 1.4em;
 	}
 
 	h4 {
-		font-size: 0.8em;
+		/* font-size: 0.8em; */
+		font-size: 1.2em;
 	}
 
 	h5 {
-		font-size: 0.8em;
+		/* font-size: 0.6em; */
+		font-size: 1em;
 	}
 
 	h6 {
+		/* font-size: 0.5em; */
 		font-size: 0.8em;
 	}
 
@@ -2358,8 +2364,8 @@ input, select, textarea {
 
 		.image.main {
 			display: block;
-			margin: 0 0 3em 0;
-			/* margin: 0px auto; */
+			margin: 0 0 1em 0;
+			/* margin: 0 0 3em 0; */
 			width: 100%;
 		}
 
