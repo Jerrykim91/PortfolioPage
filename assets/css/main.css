@@ -2750,14 +2750,21 @@ input, select, textarea {
 			.tiles article.style1 > .image:before {
 				/* background-color: #ffffff; */
 				background-color: #ffb037;
+				filter: saturate(200%);
+				/* filter: contrast(60%); */
 			}
 
 			.tiles article.style2 > .image:before {
-				background-color: #7ecaf6;
+				background-color: #2f5d62;
+				/* filter: contrast(20%); */
+				/* filter: saturate(80%); */
 			}
 
 			.tiles article.style3 > .image:before {
-				background-color: #7bd0c1;
+				background-color: #91c788;
+				/* filter: contrast(100%);
+				filter: sepia(100%);
+				filter: saturate(60%); */
 			}
 
 			.tiles article.style4 > .image:before {
@@ -2770,6 +2777,12 @@ input, select, textarea {
 
 			.tiles article.style6 > .image:before {
 				background-color: #8499e7;
+				filter: contrast(20%);
+				filter: saturate(200%);
+			}
+			.tiles article.style7 > .image:before {
+				background-color: #289672;
+				filter: saturate(80%);
 			}
 
 			body:not(.is-touch) .tiles article:hover > .image {
@@ -2781,8 +2794,8 @@ input, select, textarea {
 
 				body:not(.is-touch) .tiles article:hover > .image:before {
 					background-color: #333333;
-					opacity: 0.5;
-					/* opacity: 0.35; */
+					/* opacity: 0.5; */
+					opacity: 0.35;
 				}
 
 				body:not(.is-touch) .tiles article:hover > .image:after {
